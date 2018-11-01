@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Cogito.Collections;
 using QuickGraph;
 using QuickGraph.Algorithms.Services;
 
@@ -42,6 +42,7 @@ namespace ConsoleApp5.Algorithms
 
         }
 
+        readonly Dictionary<TVertex, HashSet<TVertex>> adjacentVerticesCache = new Dictionary<TVertex, HashSet<TVertex>>();
         IList<ISet<TVertex>> cliques;
 
         /// <summary>
@@ -133,15 +134,27 @@ namespace ConsoleApp5.Algorithms
             return result;
         }
 
-        IEnumerable<TVertex> AdjacentVertices(TVertex v)
+        /// <summary>
+        /// Gets the set of vertices adjacent to the specified vertex.
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
+        ISet<TVertex> AdjacentVertices(TVertex v)
         {
-            foreach (var i in VisitedGraph.AdjacentEdges(v))
+            return adjacentVerticesCache.GetOrAdd(v, k =>
             {
-                if (!object.Equals(i.Source, v))
-                    yield return i.Source;
-                else
-                    yield return i.Target;
-            }
+                var h = new HashSet<TVertex>();
+
+                foreach (var i in VisitedGraph.AdjacentEdges(k))
+                {
+                    if (!Equals(i.Source, k))
+                        h.Add(i.Source);
+                    else
+                        h.Add(i.Target);
+                }
+
+                return h;
+            });
         }
 
         protected void Naive(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, List<ISet<TVertex>> result)
@@ -152,7 +165,7 @@ namespace ConsoleApp5.Algorithms
             while (P.Any())
             {
                 var vertex = P.First();
-                var neighbourhood = new HashSet<TVertex>(AdjacentVertices(vertex));
+                var neighbourhood = AdjacentVertices(vertex);
                 Naive(Union(R, vertex), Intersection(P, neighbourhood), Intersection(X, neighbourhood), result);
                 P.Remove(vertex);
                 X.Add(vertex);
@@ -168,10 +181,10 @@ namespace ConsoleApp5.Algorithms
             else
             {
                 var pivot = P.Concat(X).First();
-                var candidates = Minus(P, new HashSet<TVertex>(AdjacentVertices(pivot)));
+                var candidates = Minus(P, AdjacentVertices(pivot));
                 foreach (var vertex in candidates)
                 {
-                    var neighbourhood = new HashSet<TVertex>(AdjacentVertices(vertex));
+                    var neighbourhood = AdjacentVertices(vertex);
                     Pivot(Union(R, vertex), Intersection(P, neighbourhood), Intersection(X, neighbourhood), result);
                     P.Remove(vertex);
                     X.Add(vertex);
@@ -183,19 +196,16 @@ namespace ConsoleApp5.Algorithms
         {
             foreach (var vertex in DegeneracyOrder())
             {
-                var neighbourhood = new HashSet<TVertex>(AdjacentVertices(vertex));
+                var neighbourhood = AdjacentVertices(vertex);
                 Pivot(Union(R, vertex), Intersection(P, neighbourhood), Intersection(X, neighbourhood), result);
                 P.Remove(vertex);
                 X.Add(vertex);
             }
         }
 
-        protected List<TVertex> DegeneracyOrder()
+        protected IEnumerable<TVertex> DegeneracyOrder()
         {
-            var degeneracyOrder = new List<TVertex>();
-            degeneracyOrder.AddRange(VisitedGraph.Vertices);
-            degeneracyOrder.Sort(new DegeneracyOrderComparator(vertex => new HashSet<TVertex>(AdjacentVertices(vertex))));
-            return degeneracyOrder;
+            return VisitedGraph.Vertices.OrderBy(i => i, new DegeneracyOrderComparator(vertex => AdjacentVertices(vertex)));
         }
 
     }
