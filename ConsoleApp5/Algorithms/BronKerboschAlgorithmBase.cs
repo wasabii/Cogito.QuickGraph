@@ -50,7 +50,7 @@ namespace ConsoleApp5.Algorithms
         /// </summary>
         /// <param name="visitedGraph"></param>
         public BronKerboschAlgorithmBase(IUndirectedGraph<TVertex, TEdge> visitedGraph) :
-            base(new ArrayUndirectedGraph<TVertex, TEdge>(visitedGraph))
+            base(visitedGraph)
         {
 
         }
@@ -61,7 +61,7 @@ namespace ConsoleApp5.Algorithms
         /// <param name="host"></param>
         /// <param name="visitedGraph"></param>
         public BronKerboschAlgorithmBase(IAlgorithmComponent host, IUndirectedGraph<TVertex, TEdge> visitedGraph) :
-            base(host, new ArrayUndirectedGraph<TVertex, TEdge>(visitedGraph))
+            base(host, visitedGraph)
         {
 
         }
