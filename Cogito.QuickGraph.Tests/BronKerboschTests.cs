@@ -191,11 +191,16 @@ namespace Cogito.QuickGraph.Tests
             TestContext.WriteLine($"MaximalCliquesPivot took {sw.Elapsed}.");
             sw.Reset();
 
-            r2 = r2.Where(i => i.Any(j => j.StartsWith("ZIPCODE")) && i.Any(j => j.StartsWith("LOCATION")) && i.Any(j => j.StartsWith("TYPE")) && i.Any(j => j.StartsWith("CATEGORY"))).ToList();
-            r3 = r3.Where(i => i.Any(j => j.StartsWith("ZIPCODE")) && i.Any(j => j.StartsWith("LOCATION")) && i.Any(j => j.StartsWith("TYPE")) && i.Any(j => j.StartsWith("CATEGORY"))).ToList();
+            bool ContainsRequiredValues(IEnumerable<string> a)
+            {
+                return a.Any(j => j.StartsWith("ZIPCODE")) && a.Any(j => j.StartsWith("LOCATION")) && a.Any(j => j.StartsWith("TYPE")) && a.Any(j => j.StartsWith("CATEGORY"));
+            }
 
-            r2.Should().HaveCount(72);
-            r3.Should().HaveCount(72);
+            var e2 = r2.Where(i => ContainsRequiredValues(i.Vertices)).ToList();
+            var e3 = r3.Where(i => ContainsRequiredValues(i.Vertices)).ToList();
+
+            e2.Should().HaveCount(72);
+            e3.Should().HaveCount(72);
         }
 
     }

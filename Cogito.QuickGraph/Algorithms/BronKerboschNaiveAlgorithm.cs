@@ -11,7 +11,7 @@ namespace Cogito.QuickGraph.Algorithms
     /// </summary>
     /// <typeparam name="TVertex"></typeparam>
     /// <typeparam name="TEdge"></typeparam>
-    public class BronKerboschAlgorithm<TVertex, TEdge> :
+    public class BronKerboschNaiveAlgorithm<TVertex, TEdge> :
         BronKerboschAlgorithmBase<TVertex, TEdge>
         where TEdge : IEdge<TVertex>
     {
@@ -20,7 +20,7 @@ namespace Cogito.QuickGraph.Algorithms
         /// Initializes a new instance.
         /// </summary>
         /// <param name="visitedGraph"></param>
-        public BronKerboschAlgorithm(IUndirectedGraph<TVertex, TEdge> visitedGraph) :
+        public BronKerboschNaiveAlgorithm(IUndirectedGraph<TVertex, TEdge> visitedGraph) :
             base(visitedGraph)
         {
 
@@ -31,7 +31,7 @@ namespace Cogito.QuickGraph.Algorithms
         /// </summary>
         /// <param name="host"></param>
         /// <param name="visitedGraph"></param>
-        public BronKerboschAlgorithm(IAlgorithmComponent host, IUndirectedGraph<TVertex, TEdge> visitedGraph) :
+        public BronKerboschNaiveAlgorithm(IAlgorithmComponent host, IUndirectedGraph<TVertex, TEdge> visitedGraph) :
             base(host, visitedGraph)
         {
 

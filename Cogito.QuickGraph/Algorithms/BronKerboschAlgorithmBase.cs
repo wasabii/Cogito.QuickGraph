@@ -45,7 +45,7 @@ namespace Cogito.QuickGraph.Algorithms
         }
 
         readonly Dictionary<TVertex, HashSet<TVertex>> adjacentVerticesCache = new Dictionary<TVertex, HashSet<TVertex>>();
-        IList<ISet<TVertex>> cliques;
+        ISet<IUndirectedGraph<TVertex, IEdge<TVertex>>> cliques;
 
         /// <summary>
         /// Initializes a new instance.
@@ -71,7 +71,7 @@ namespace Cogito.QuickGraph.Algorithms
         /// <summary>
         /// Gets the discovered set of maximal cliques.
         /// </summary>
-        public IList<ISet<TVertex>> MaximalCliques => cliques;
+        public ISet<IUndirectedGraph<TVertex, IEdge<TVertex>>> MaximalCliques => cliques;
 
         /// <summary>
         /// Computes the maximal set of cliques.
@@ -79,7 +79,29 @@ namespace Cogito.QuickGraph.Algorithms
         protected override void InternalCompute()
         {
             if (cliques == null)
-                cliques = ComputeInternal();
+            {
+                var l = new HashSet<IUndirectedGraph<TVertex, IEdge<TVertex>>>();
+                var r = ComputeInternal();
+
+                foreach (var i in r)
+                {
+                    var n = i;
+
+                    // gets the edges for the given vertex
+                    bool TryGetEdges(TVertex v, out IEnumerable<IEdge<TVertex>> edges)
+                    {
+                        edges = n.Where(j => !Equals(v, j)).Select(j => (IEdge<TVertex>) new SEquatableUndirectedEdge<TVertex>(v, j));
+                        return true;
+                    }
+
+                    // generate new graph which enumerates a fully connected graph
+                    var g = new DelegateUndirectedGraph<TVertex, IEdge<TVertex>>(n, TryGetEdges, false);
+                    l.Add(g);
+                }
+
+                // set as result
+                cliques = l;
+            }
         }
 
         /// <summary>
