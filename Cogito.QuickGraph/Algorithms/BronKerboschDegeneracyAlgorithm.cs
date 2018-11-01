@@ -4,7 +4,7 @@ using System.Linq;
 using QuickGraph;
 using QuickGraph.Algorithms.Services;
 
-namespace ConsoleApp5.Algorithms
+namespace Cogito.QuickGraph.Algorithms
 {
 
     /// <summary>

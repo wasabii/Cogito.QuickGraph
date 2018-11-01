@@ -1,19 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Linq;
 using System.Xml.Linq;
-using ConsoleApp5.Algorithms;
+
+using Cogito.QuickGraph.Algorithms;
+using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using QuickGraph;
 
-namespace ConsoleApp5
+namespace Cogito.QuickGraph.Tests
 {
-    class Program
+
+    [TestClass]
+    public class BronKerboschTests
     {
         static readonly XNamespace ns3 = "urn:com.journaltech:ecourt:ecf:extension:ZipCodeValue";
 
-        static void Main(string[] args)
+        public TestContext TestContext { get; set; }
+
+        [TestMethod]
+        public void Test_BronKerbosch()
         {
             var zipCodeList = XDocument.Load("XMLFile1.xml")
                 .Root.Element("SimpleCodeList")
@@ -67,8 +75,6 @@ namespace ConsoleApp5
 
             foreach (var items in zipCodeList.Where(i => i.CaseCategory != null).Distinct())
                 g.AddVertex("CATEGORY:" + items.CaseCategory);
-
-            bool IsConnected(string s1, string s2) => g.ContainsEdge(CreateEdge(s1, s2));
 
             foreach (var zipcode in zipCodes)
                 foreach (var zipCode2 in zipCodes)
@@ -171,23 +177,26 @@ namespace ConsoleApp5
             sw.Start();
             //var r1 = g.BronKerbosh();
             sw.Stop();
-            Console.WriteLine($"MaximalCliques took {sw.Elapsed}.");
+            TestContext.WriteLine($"MaximalCliques took {sw.Elapsed}.");
             sw.Reset();
 
             sw.Start();
             var r2 = g.BronKerboshDegeneracy();
             sw.Stop();
-            Console.WriteLine($"MaximalCliquesDegeneracy took {sw.Elapsed}.");
+            TestContext.WriteLine($"MaximalCliquesDegeneracy took {sw.Elapsed}.");
             sw.Reset();
 
             sw.Start();
             var r3 = g.BronKerboshPivot();
             sw.Stop();
-            Console.WriteLine($"MaximalCliquesPivot took {sw.Elapsed}.");
+            TestContext.WriteLine($"MaximalCliquesPivot took {sw.Elapsed}.");
             sw.Reset();
 
             r2 = r2.Where(i => i.Any(j => j.StartsWith("ZIPCODE")) && i.Any(j => j.StartsWith("LOCATION")) && i.Any(j => j.StartsWith("TYPE")) && i.Any(j => j.StartsWith("CATEGORY"))).ToList();
             r3 = r3.Where(i => i.Any(j => j.StartsWith("ZIPCODE")) && i.Any(j => j.StartsWith("LOCATION")) && i.Any(j => j.StartsWith("TYPE")) && i.Any(j => j.StartsWith("CATEGORY"))).ToList();
+
+            r2.Should().HaveCount(72);
+            r3.Should().HaveCount(72);
         }
 
     }

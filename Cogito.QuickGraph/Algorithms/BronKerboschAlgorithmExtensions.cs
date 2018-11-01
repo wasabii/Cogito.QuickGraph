@@ -2,7 +2,7 @@
 
 using QuickGraph;
 
-namespace ConsoleApp5.Algorithms
+namespace Cogito.QuickGraph.Algorithms
 {
 
     public static class BronKerboschAlgorithmExtensions

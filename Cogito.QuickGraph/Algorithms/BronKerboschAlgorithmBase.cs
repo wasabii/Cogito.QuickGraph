@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using Cogito.Collections;
+
 using QuickGraph;
 using QuickGraph.Algorithms.Services;
 
-namespace ConsoleApp5.Algorithms
+namespace Cogito.QuickGraph.Algorithms
 {
 
     /// <summary>
@@ -14,7 +16,7 @@ namespace ConsoleApp5.Algorithms
     /// <typeparam name="TVertex"></typeparam>
     /// <typeparam name="TEdge"></typeparam>
     public abstract class BronKerboschAlgorithmBase<TVertex, TEdge> :
-        QuickGraph.Algorithms.Cliques.MaximumCliqueAlgorithmBase<TVertex, TEdge>
+        global::QuickGraph.Algorithms.Cliques.MaximumCliqueAlgorithmBase<TVertex, TEdge>
         where TEdge : IEdge<TVertex>
     {
 
