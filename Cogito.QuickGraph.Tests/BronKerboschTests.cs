@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Xml.Linq;
@@ -17,7 +16,7 @@ namespace Cogito.QuickGraph.Tests
     public class BronKerboschTests
     {
         static readonly XNamespace ns3 = "urn:com.journaltech:ecourt:ecf:extension:ZipCodeValue";
-         
+
         public TestContext TestContext { get; set; }
 
         [TestMethod]
