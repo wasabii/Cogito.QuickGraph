@@ -1,0 +1,2405 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:CodeList xmlns:ns2="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" xmlns:ns3="urn:com.journaltech:ecourt:ecf:extension:ZipCodeValue" xmlns:ns4="urn:com.journaltech:ecourt:ecf:extension:AttorneyValue" xmlns:ns5="urn:com.journaltech:ecourt:ecf:extension:CodeValue" xmlns:ns6="urn:com.journaltech:ecourt:ecf:extension:DocumentValue">
+    <ColumnSet>
+        <Column Use="required" Id="code">
+            <ShortName>Code</ShortName>
+        </Column>
+        <Column Use="required" Id="value">
+            <ShortName>Value</ShortName>
+        </Column>
+        <Key Id="codeKey">
+            <ShortName>CodeKey</ShortName>
+            <ColumnRef Ref="code"/>
+        </Key>
+    </ColumnSet>
+    <SimpleCodeList>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0201</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Writ - Administrative Mandamus</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PET</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0202</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Writ - Mandamus on Limited Court Case Matter</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PET</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0203</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Writ - Other Limited Court Case Review</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>APP</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0301</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Antitrust/Trade Regulation</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0401</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Asbestos Property Damage</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0402</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Asbestos- Personal Injury/Wrongful Death</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0501</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Asset Forfeiture Case</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PET</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>RES</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0601</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Breach of Rental/Lease Contract (not unlawful detainer or wrongful eviction)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0602</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Contract/Warranty Breach - Seller Plaintiff (no fraud/negligence)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0603</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Negligent Breach of Contract/Warranty (no fraud)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0604</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Breach of Contract/Warranty (not fraud or negligence)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0701</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Commercial/Business Tort (not fraud/ breach of contract)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0801</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Civil Rights/Discrimination</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0901</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Collections Case - Seller Plaintiff</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0902</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Promissory Note/Collections Case</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>0903</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Collections Case - Purchased Debt (Charged Off Consumer Debt Purchased on or after January 1,2014)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>1001</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Construction Defect</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>1101</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Petition to Compel/Confirm/Vacate Arbitration</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PET</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>RES</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>1301</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Defamation (slander/libel)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>1401</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Eminent Domain/Condemnation</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>1501</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Employment Complaint Case</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>1502</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Labor Commissioner Appeals</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>APP</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>1601</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Fraud (no contract)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>1801</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Insurance Coverage (not complex)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2001</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Sister State Judgment</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2002</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Abstract of Judgment</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2003</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Confession of Judgment (non-domestic relations)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2004</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Administrative Agency Award (not unpaid taxes)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2005</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Petition/Certificate for Entry Judgment on Unpaid Tax</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PET</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>RES</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2006</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Enforcement of Judgment Case</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2101</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Partnership &amp; Corporate Governance Case</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2201</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Motor Vehicle - Personal Injury/Property Damage/Wrongful Death</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2301</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Premises Liability (e.g.slip &amp; fall)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2302</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Intentional Bodily Injury/Property Damage/Wrongful Death (e.g., assault, vandalism, etc.)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2303</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Intentional Infliction of Emotional Distress</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2304</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Personal Injury/Property Damage/Wrongful Death</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2401</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Product Liability (not asbestos or toxic/environmental)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2501</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Legal Malpractice</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2502</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Professional Malpractice (not medical or legal)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2601</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Mortgage Foreclosure</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2602</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Quiet Title</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2603</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Real Property (not eminent domain, landlord/tenant, foreclosure)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2701</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Racketeering (RICO) Case</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>2801</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Securities Litigation Case</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>3001</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Toxic Tort/Environmental</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>3101</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Unlawful Detainer/Commercial (not drugs or wrongful eviction)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>3201</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Unlawful Detainer/Residential (not drugs or wrongful eviction)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>3301</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Wrongful Eviction Case</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>3401</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Unlawful Detainer - Post-Foreclosure</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>3501</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Non-Personal Injury/Property Damage tort</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>3601</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Wrongful Termination</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>3701</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Contractual Fraud</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>3702</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Tortious Interference</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>3703</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Contract Dispute (not breach/insurance/fraud/negligence)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>3801</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Unlawful Detainer - Drugs</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>3901</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Writ /Judicial Review</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PET</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>RES</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4001</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Claims Involving Mass Tort</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4101</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Insurance Coverage/Subrogation (complex case only)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4201</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Declaratory Relief Only</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4202</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Injunctive Relief Only (not domestic/harassment)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4203</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Commercial Complaint (non-tort/non-complex)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4204</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Complaint (non-tort/non-complex)</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4301</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Civil Harassment</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PET</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4302</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Workplace Harassment</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PET</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4303</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Elder Abuse/Dependent Adult Abuse Case</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PET</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>RES</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4304</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Election Contest</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CNST</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4305</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Petition for Change of Name</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PET</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4306</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Petition for Relief from Late Claim Law</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PET</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4307</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Civil Petition</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PET</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>RES</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4501</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Medical Malpractice - Physicians &amp; Surgeons</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4502</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Other Professional Health Care Malpractice</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>4601</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Personal Injury/Property Damage/Wrongful Death - Uninsured Motorist</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>CU</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>DEF</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>PLAIN</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>AP154</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Appellate Division Appeal</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>AP</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>AP6154O</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Appellate Division Pre-Appeal Motion</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>AP</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>AP6155</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Petition for Writ - Habeas Corpus</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>AP</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>AP6152</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Petition for Writ - Mandate</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>AP</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>AP6100</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Petition for Writ - Supersedeas</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>AP</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>AP6153</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Petition for Writ - Other</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>AP</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>3902</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Administrative Hearing</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>RES</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>APP</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>3903</SimpleValue>
+            </Value>
+            <Value ColumnRef="value">
+                <ComplexValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns5:CodeValue">
+                    <ns5:name>Parking Appeal</ns5:name>
+                    <ns5:relationships>
+                        <ns5:relationship>
+                            <ns5:relatedListName>CASE_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>LC</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>JURISDICTIONAL_AMOUNT</ns5:relatedListName>
+                            <ns5:relatedCode>O10K</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>RES</ns5:relatedCode>
+                        </ns5:relationship>
+                        <ns5:relationship>
+                            <ns5:relatedListName>PARTY_TYPE</ns5:relatedListName>
+                            <ns5:relatedCode>APP</ns5:relatedCode>
+                        </ns5:relationship>
+                    </ns5:relationships>
+                </ComplexValue>
+            </Value>
+        </Row>
+    </SimpleCodeList>
+</ns2:CodeList>
