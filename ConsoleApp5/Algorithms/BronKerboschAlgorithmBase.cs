@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-
-using Cogito.Collections;
 
 using QuickGraph;
 using QuickGraph.Algorithms.Services;
@@ -25,20 +24,20 @@ namespace ConsoleApp5.Algorithms
         class DegeneracyOrderComparator : Comparer<TVertex>
         {
 
-            readonly IDictionary<TVertex, ISet<TVertex>> neighbours;
+            readonly Func<TVertex, ISet<TVertex>> neighbours;
 
             /// <summary>
             /// Initializes a new instance.
             /// </summary>
             /// <param name="neighbours"></param>
-            public DegeneracyOrderComparator(IDictionary<TVertex, ISet<TVertex>> neighbours)
+            public DegeneracyOrderComparator(Func<TVertex, ISet<TVertex>> neighbours)
             {
                 this.neighbours = neighbours;
             }
 
             public override int Compare(TVertex u, TVertex v)
             {
-                return neighbours[u].Count - neighbours[v].Count;
+                return neighbours(u).Count - neighbours(v).Count;
             }
 
         }
@@ -50,7 +49,7 @@ namespace ConsoleApp5.Algorithms
         /// </summary>
         /// <param name="visitedGraph"></param>
         public BronKerboschAlgorithmBase(IUndirectedGraph<TVertex, TEdge> visitedGraph) :
-            base(visitedGraph)
+            base(new ArrayUndirectedGraph<TVertex, TEdge>(visitedGraph))
         {
 
         }
@@ -61,7 +60,7 @@ namespace ConsoleApp5.Algorithms
         /// <param name="host"></param>
         /// <param name="visitedGraph"></param>
         public BronKerboschAlgorithmBase(IAlgorithmComponent host, IUndirectedGraph<TVertex, TEdge> visitedGraph) :
-            base(host, visitedGraph)
+            base(host, new ArrayUndirectedGraph<TVertex, TEdge>(visitedGraph))
         {
 
         }
@@ -86,87 +85,81 @@ namespace ConsoleApp5.Algorithms
         /// <returns></returns>
         protected abstract IList<ISet<TVertex>> ComputeInternal();
 
-        protected List<ISet<TVertex>> MaximalCliquesNaive(IDictionary<TVertex, ISet<TVertex>> neighbours)
+        protected List<ISet<TVertex>> MaximalCliquesNaive()
         {
             var result = new List<ISet<TVertex>>();
-            Naive(new HashSet<TVertex>(), Vertices(neighbours), new HashSet<TVertex>(), neighbours, result);
+            Naive(new HashSet<TVertex>(), new HashSet<TVertex>(VisitedGraph.Vertices), new HashSet<TVertex>(), result);
             return new List<ISet<TVertex>>(result);
         }
 
-        protected List<ISet<TVertex>> MaximalCliquesPivot(IDictionary<TVertex, ISet<TVertex>> neighbours)
+        protected List<ISet<TVertex>> MaximalCliquesPivot()
         {
             var result = new List<ISet<TVertex>>();
-            Pivot(new HashSet<TVertex>(), Vertices(neighbours), new HashSet<TVertex>(), neighbours, result);
+            Pivot(new HashSet<TVertex>(), new HashSet<TVertex>(VisitedGraph.Vertices), new HashSet<TVertex>(), result);
             return new List<ISet<TVertex>>(result);
         }
 
-        protected List<ISet<TVertex>> MaximalCliquesDegeneracy(IDictionary<TVertex, ISet<TVertex>> neighbours)
+        protected List<ISet<TVertex>> MaximalCliquesDegeneracy()
         {
             var result = new List<ISet<TVertex>>();
-            Degeneracy(new HashSet<TVertex>(), Vertices(neighbours), new HashSet<TVertex>(), neighbours, result);
+            Degeneracy(new HashSet<TVertex>(), new HashSet<TVertex>(VisitedGraph.Vertices), new HashSet<TVertex>(), result);
             return new List<ISet<TVertex>>(result);
         }
 
-        protected ISet<TVertex> Vertices(IDictionary<TVertex, ISet<TVertex>> neighbours)
+        /// <summary>
+        /// Returns an enumerable containing the unique items of both sets.
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        protected ISet<TVertex> Union(IEnumerable<TVertex> A, TVertex b)
         {
-            var vertices = new HashSet<TVertex>();
-            vertices.AddRange(neighbours.Keys);
-            return vertices;
-        }
-
-        protected TVertex PickFrom(ISet<TVertex> A)
-        {
-            return A.First();
-        }
-
-        protected ISet<TVertex> Union(ISet<TVertex> A, ISet<TVertex> B)
-        {
-            var result = new HashSet<TVertex>();
-            result.AddRange(A);
-            result.AddRange(B);
-            return result;
-        }
-
-        protected ISet<TVertex> Union(ISet<TVertex> A, TVertex b)
-        {
-            var result = new HashSet<TVertex>();
-            result.AddRange(A);
-            result.Add(b);
-            return result;
+            var h = new HashSet<TVertex>(A);
+            h.Add(b);
+            return h;
         }
 
         protected ISet<TVertex> Intersection(ISet<TVertex> A, ISet<TVertex> B)
         {
-            var result = new HashSet<TVertex>();
-            result.AddRange(A);
+            var result = new HashSet<TVertex>(A);
             result.IntersectWith(B);
             return result;
         }
 
         protected IEnumerable<TVertex> Minus(ISet<TVertex> A, ISet<TVertex> B)
         {
-            var result = new HashSet<TVertex>();
-            result.AddRange(A);
+            var result = new HashSet<TVertex>(A);
             result.ExceptWith(B);
             return result;
         }
 
-        protected void Naive(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, IDictionary<TVertex, ISet<TVertex>> neighbours, List<ISet<TVertex>> result)
+        IEnumerable<TVertex> AdjacentVertices(TVertex v)
+        {
+            foreach (var i in VisitedGraph.AdjacentEdges(v))
+            {
+                if (!object.Equals(i.Source, v))
+                    yield return i.Source;
+                else
+                    yield return i.Target;
+            }
+        }
+
+        protected void Naive(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, List<ISet<TVertex>> result)
         {
             if (P.Any() == false && X.Any() == false)
                 result.Add(new HashSet<TVertex>(R));
 
             while (P.Any())
             {
-                var vertex = PickFrom(P);
-                var neighbourhood = neighbours[vertex];
-                Naive(Union(R, vertex), Intersection(P, neighbourhood), Intersection(X, neighbourhood), neighbours, result);
+                var vertex = P.First();
+                var neighbourhood = new HashSet<TVertex>(AdjacentVertices(vertex));
+                Naive(Union(R, vertex), Intersection(P, neighbourhood), Intersection(X, neighbourhood), result);
                 P.Remove(vertex);
                 X.Add(vertex);
             }
         }
 
-        protected void Pivot(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, IDictionary<TVertex, ISet<TVertex>> neighbours, List<ISet<TVertex>> result)
+        protected void Pivot(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, List<ISet<TVertex>> result)
         {
             if (P.Any() == false && X.Any() == false)
             {
@@ -174,34 +167,34 @@ namespace ConsoleApp5.Algorithms
             }
             else
             {
-                var pivot = PickFrom(Union(P, X));
-                var candidates = Minus(P, neighbours[pivot]);
+                var pivot = P.Concat(X).First();
+                var candidates = Minus(P, new HashSet<TVertex>(AdjacentVertices(pivot)));
                 foreach (var vertex in candidates)
                 {
-                    var neighbourhood = neighbours[vertex];
-                    Pivot(Union(R, vertex), Intersection(P, neighbourhood), Intersection(X, neighbourhood), neighbours, result);
+                    var neighbourhood = new HashSet<TVertex>(AdjacentVertices(vertex));
+                    Pivot(Union(R, vertex), Intersection(P, neighbourhood), Intersection(X, neighbourhood), result);
                     P.Remove(vertex);
                     X.Add(vertex);
                 }
             }
         }
 
-        protected void Degeneracy(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, IDictionary<TVertex, ISet<TVertex>> neighbours, List<ISet<TVertex>> result)
+        protected void Degeneracy(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, List<ISet<TVertex>> result)
         {
-            foreach (var vertex in DegeneracyOrder(neighbours))
+            foreach (var vertex in DegeneracyOrder())
             {
-                var neighbourhood = neighbours[vertex];
-                Pivot(Union(R, vertex), Intersection(P, neighbourhood), Intersection(X, neighbourhood), neighbours, result);
+                var neighbourhood = new HashSet<TVertex>(AdjacentVertices(vertex));
+                Pivot(Union(R, vertex), Intersection(P, neighbourhood), Intersection(X, neighbourhood), result);
                 P.Remove(vertex);
                 X.Add(vertex);
             }
         }
 
-        protected List<TVertex> DegeneracyOrder(IDictionary<TVertex, ISet<TVertex>> neighbours)
+        protected List<TVertex> DegeneracyOrder()
         {
             var degeneracyOrder = new List<TVertex>();
-            degeneracyOrder.AddRange(neighbours.Keys);
-            degeneracyOrder.Sort(new DegeneracyOrderComparator(neighbours));
+            degeneracyOrder.AddRange(VisitedGraph.Vertices);
+            degeneracyOrder.Sort(new DegeneracyOrderComparator(vertex => new HashSet<TVertex>(AdjacentVertices(vertex))));
             return degeneracyOrder;
         }
 

@@ -43,8 +43,7 @@ namespace ConsoleApp5.Algorithms
         /// </summary>
         protected override IList<ISet<TVertex>> ComputeInternal()
         {
-            var d = VisitedGraph.Vertices.ToDictionary(i => i, i => (ISet<TVertex>)new HashSet<TVertex>(VisitedGraph.AdjacentEdges(i).Select(j => !Equals(i, j.Source) ? j.Source : j.Target)));
-            return MaximalCliquesPivot(d);
+            return MaximalCliquesPivot();
         }
 
     }
