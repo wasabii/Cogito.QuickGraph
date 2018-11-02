@@ -23,7 +23,7 @@ namespace Cogito.QuickGraph.Algorithms
         /// <summary>
         /// Compares the order of the given vertices for the degeneracy.
         /// </summary>
-        class DegeneracyOrderComparator : Comparer<TVertex>
+        struct DegeneracyOrderComparator : IComparer<TVertex>
         {
 
             readonly Func<TVertex, ISet<TVertex>> neighbours;
@@ -34,10 +34,10 @@ namespace Cogito.QuickGraph.Algorithms
             /// <param name="neighbours"></param>
             public DegeneracyOrderComparator(Func<TVertex, ISet<TVertex>> neighbours)
             {
-                this.neighbours = neighbours;
+                this.neighbours = neighbours ?? throw new ArgumentNullException(nameof(neighbours));
             }
 
-            public override int Compare(TVertex u, TVertex v)
+            public int Compare(TVertex u, TVertex v)
             {
                 return neighbours(u).Count - neighbours(v).Count;
             }
@@ -90,7 +90,7 @@ namespace Cogito.QuickGraph.Algorithms
                     // gets the edges for the given vertex
                     bool TryGetEdges(TVertex v, out IEnumerable<IEdge<TVertex>> edges)
                     {
-                        edges = n.Where(j => !Equals(v, j)).Select(j => (IEdge<TVertex>) new SEquatableUndirectedEdge<TVertex>(v, j));
+                        edges = n.Where(j => !Equals(v, j)).Select(j => (IEdge<TVertex>)new SEquatableUndirectedEdge<TVertex>(v, j));
                         return true;
                     }
 
@@ -114,21 +114,21 @@ namespace Cogito.QuickGraph.Algorithms
         {
             var result = new List<ISet<TVertex>>();
             Naive(new HashSet<TVertex>(), new HashSet<TVertex>(VisitedGraph.Vertices), new HashSet<TVertex>(), result);
-            return new List<ISet<TVertex>>(result);
+            return result;
         }
 
         protected List<ISet<TVertex>> MaximalCliquesPivot()
         {
             var result = new List<ISet<TVertex>>();
             Pivot(new HashSet<TVertex>(), new HashSet<TVertex>(VisitedGraph.Vertices), new HashSet<TVertex>(), result);
-            return new List<ISet<TVertex>>(result);
+            return result;
         }
 
         protected List<ISet<TVertex>> MaximalCliquesDegeneracy()
         {
             var result = new List<ISet<TVertex>>();
             Degeneracy(new HashSet<TVertex>(), new HashSet<TVertex>(VisitedGraph.Vertices), new HashSet<TVertex>(), result);
-            return new List<ISet<TVertex>>(result);
+            return result;
         }
 
         /// <summary>
@@ -139,21 +139,21 @@ namespace Cogito.QuickGraph.Algorithms
         /// <returns></returns>
         protected ISet<TVertex> Union(IEnumerable<TVertex> A, TVertex b)
         {
-            var h = new HashSet<TVertex>(A);
+            var h = new HashSet<TVertex>(A, EqualityComparer<TVertex>.Default);
             h.Add(b);
             return h;
         }
 
         protected ISet<TVertex> Intersection(ISet<TVertex> A, ISet<TVertex> B)
         {
-            var result = new HashSet<TVertex>(A);
+            var result = new HashSet<TVertex>(A, EqualityComparer<TVertex>.Default);
             result.IntersectWith(B);
             return result;
         }
 
         protected IEnumerable<TVertex> Minus(ISet<TVertex> A, ISet<TVertex> B)
         {
-            var result = new HashSet<TVertex>(A);
+            var result = new HashSet<TVertex>(A, EqualityComparer<TVertex>.Default);
             result.ExceptWith(B);
             return result;
         }
@@ -184,7 +184,7 @@ namespace Cogito.QuickGraph.Algorithms
         protected void Naive(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, List<ISet<TVertex>> result)
         {
             if (P.Any() == false && X.Any() == false)
-                result.Add(new HashSet<TVertex>(R));
+                result.Add(new HashSet<TVertex>(R, EqualityComparer<TVertex>.Default));
 
             while (P.Any())
             {
@@ -200,7 +200,7 @@ namespace Cogito.QuickGraph.Algorithms
         {
             if (P.Any() == false && X.Any() == false)
             {
-                result.Add(new HashSet<TVertex>(R));
+                result.Add(new HashSet<TVertex>(R, EqualityComparer<TVertex>.Default));
             }
             else
             {
