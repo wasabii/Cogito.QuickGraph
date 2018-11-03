@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using Cogito.Linq;
+
 using QuickGraph;
 
 namespace Cogito.QuickGraph
@@ -16,24 +18,6 @@ namespace Cogito.QuickGraph
     {
 
         /// <summary>
-        /// Returns the edges for a given dimension value.
-        /// </summary>
-        /// <param name="getter"></param>
-        /// <returns></returns>
-        static global::QuickGraph.TryFunc<T, TResult> GetTryGetFunc<T, TResult>(Func<T, TResult> getter)
-        {
-            // capture implementation
-            bool TryGetFuncImpl(T arg, out TResult result)
-            {
-                result = getter(arg);
-                return result != null;
-            }
-
-            // return internal impl
-            return TryGetFuncImpl;
-        }
-
-        /// <summary>
         /// Gets the adjacent edges for the specified vertex.
         /// </summary>
         /// <param name="vertices"></param>
@@ -44,13 +28,22 @@ namespace Cogito.QuickGraph
             if (vertices == null)
                 throw new ArgumentNullException(nameof(vertices));
 
-            return vertices
-                .Where(i => !Equals(i, vertex))
-                .Select(i => new SEquatableUndirectedEdge<TVertex>(vertex, i));
+            // allow cached enumeration
+            var t = vertices.Tee();
+            if (t.Contains(vertex))
+                return t
+                    .Where(i => !Equals(i, vertex))
+                    .Select(i => new SEquatableUndirectedEdge<TVertex>(vertex, i));
+
+            return Enumerable.Empty<SEquatableUndirectedEdge<TVertex>>();
         }
 
-        public ConnectedUndirectedGraph(IEnumerable<TVertex> vertices) : 
-            base(vertices, GetTryGetFunc<TVertex, IEnumerable<SEquatableUndirectedEdge<TVertex>>>(v => GetAdjacentEdges(vertices, v)), false)
+        /// <summary>
+        /// Initializes a new instance.
+        /// </summary>
+        /// <param name="vertices"></param>
+        public ConnectedUndirectedGraph(IEnumerable<TVertex> vertices) :
+            base(vertices, GraphUtil.GetTryGetFunc<TVertex, IEnumerable<SEquatableUndirectedEdge<TVertex>>>(v => GetAdjacentEdges(vertices, v)), false)
         {
 
         }
