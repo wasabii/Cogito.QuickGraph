@@ -11,7 +11,7 @@ namespace Cogito.QuickGraph.Algorithms
 {
 
     /// <summary>
-    /// Implements the standard form of the Bron-Kerbosch algorithm.
+    /// Implements the various forms of the Bron-Kerbosch algorithm.
     /// </summary>
     /// <typeparam name="TVertex"></typeparam>
     /// <typeparam name="TEdge"></typeparam>
