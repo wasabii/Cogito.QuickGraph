@@ -78,30 +78,27 @@ namespace Cogito.QuickGraph.Algorithms
         /// </summary>
         protected override void InternalCompute()
         {
-            if (cliques == null)
+            var l = new HashSet<IUndirectedGraph<TVertex, IEdge<TVertex>>>();
+            var r = ComputeInternal();
+
+            foreach (var i in r)
             {
-                var l = new HashSet<IUndirectedGraph<TVertex, IEdge<TVertex>>>();
-                var r = ComputeInternal();
+                var n = i;
 
-                foreach (var i in r)
+                // gets the edges for the given vertex
+                bool TryGetEdges(TVertex v, out IEnumerable<IEdge<TVertex>> edges)
                 {
-                    var n = i;
-
-                    // gets the edges for the given vertex
-                    bool TryGetEdges(TVertex v, out IEnumerable<IEdge<TVertex>> edges)
-                    {
-                        edges = n.Where(j => !Equals(v, j)).Select(j => (IEdge<TVertex>)new SEquatableUndirectedEdge<TVertex>(v, j));
-                        return true;
-                    }
-
-                    // generate new graph which enumerates a fully connected graph
-                    var g = new DelegateUndirectedGraph<TVertex, IEdge<TVertex>>(n, TryGetEdges, false);
-                    l.Add(g);
+                    edges = n.Where(j => !Equals(v, j)).Select(j => (IEdge<TVertex>)new SEquatableUndirectedEdge<TVertex>(v, j));
+                    return true;
                 }
 
-                // set as result
-                cliques = l;
+                // generate new graph which enumerates a fully connected graph
+                var g = new DelegateUndirectedGraph<TVertex, IEdge<TVertex>>(n, TryGetEdges, false);
+                l.Add(g);
             }
+
+            // set as result
+            cliques = l;
         }
 
         /// <summary>
@@ -110,6 +107,10 @@ namespace Cogito.QuickGraph.Algorithms
         /// <returns></returns>
         protected abstract IList<ISet<TVertex>> ComputeInternal();
 
+        /// <summary>
+        /// Implements the naive version of the Bron-Kerbosh algorithm.
+        /// </summary>
+        /// <returns></returns>
         protected List<ISet<TVertex>> MaximalCliquesNaive()
         {
             var result = new List<ISet<TVertex>>();
@@ -117,6 +118,10 @@ namespace Cogito.QuickGraph.Algorithms
             return result;
         }
 
+        /// <summary>
+        /// Implements the pivoting version of the Bron-Kerbosh algorithm.
+        /// </summary>
+        /// <returns></returns>
         protected List<ISet<TVertex>> MaximalCliquesPivot()
         {
             var result = new List<ISet<TVertex>>();
@@ -124,6 +129,10 @@ namespace Cogito.QuickGraph.Algorithms
             return result;
         }
 
+        /// <summary>
+        /// Implements the degeneracy version of the Bron-Kerbosch algorithm.
+        /// </summary>
+        /// <returns></returns>
         protected List<ISet<TVertex>> MaximalCliquesDegeneracy()
         {
             var result = new List<ISet<TVertex>>();
@@ -137,25 +146,37 @@ namespace Cogito.QuickGraph.Algorithms
         /// <param name="A"></param>
         /// <param name="b"></param>
         /// <returns></returns>
-        protected ISet<TVertex> Union(IEnumerable<TVertex> A, TVertex b)
+        ISet<TVertex> Union(IEnumerable<TVertex> A, TVertex b)
         {
             var h = new HashSet<TVertex>(A, EqualityComparer<TVertex>.Default);
             h.Add(b);
             return h;
         }
 
-        protected ISet<TVertex> Intersection(ISet<TVertex> A, ISet<TVertex> B)
+        /// <summary>
+        /// Returns an enumerable containing the items that exist in both sets.
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <returns></returns>
+        ISet<TVertex> Intersection(ISet<TVertex> A, ISet<TVertex> B)
         {
-            var result = new HashSet<TVertex>(A, EqualityComparer<TVertex>.Default);
-            result.IntersectWith(B);
-            return result;
+            var h = new HashSet<TVertex>(A, EqualityComparer<TVertex>.Default);
+            h.IntersectWith(B);
+            return h;
         }
 
-        protected IEnumerable<TVertex> Minus(ISet<TVertex> A, ISet<TVertex> B)
+        /// <summary>
+        /// Returns an enumerable of those items in the first set not in the second.
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <returns></returns>
+        IEnumerable<TVertex> Minus(ISet<TVertex> A, ISet<TVertex> B)
         {
-            var result = new HashSet<TVertex>(A, EqualityComparer<TVertex>.Default);
-            result.ExceptWith(B);
-            return result;
+            var h = new HashSet<TVertex>(A, EqualityComparer<TVertex>.Default);
+            h.ExceptWith(B);
+            return h;
         }
 
         /// <summary>
@@ -181,7 +202,14 @@ namespace Cogito.QuickGraph.Algorithms
             });
         }
 
-        protected void Naive(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, List<ISet<TVertex>> result)
+        /// <summary>
+        /// Implements the standard Bron-Kerbosh algorithm.
+        /// </summary>
+        /// <param name="R"></param>
+        /// <param name="P"></param>
+        /// <param name="X"></param>
+        /// <param name="result"></param>
+        void Naive(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, List<ISet<TVertex>> result)
         {
             if (P.Any() == false && X.Any() == false)
                 result.Add(new HashSet<TVertex>(R, EqualityComparer<TVertex>.Default));
@@ -196,7 +224,14 @@ namespace Cogito.QuickGraph.Algorithms
             }
         }
 
-        protected void Pivot(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, List<ISet<TVertex>> result)
+        /// <summary>
+        /// Implements a version of the algorithm that pivots.
+        /// </summary>
+        /// <param name="R"></param>
+        /// <param name="P"></param>
+        /// <param name="X"></param>
+        /// <param name="result"></param>
+        void Pivot(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, List<ISet<TVertex>> result)
         {
             if (P.Any() == false && X.Any() == false)
             {
@@ -216,7 +251,14 @@ namespace Cogito.QuickGraph.Algorithms
             }
         }
 
-        protected void Degeneracy(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, List<ISet<TVertex>> result)
+        /// <summary>
+        /// Implements a version that pivots on a degeneracy, suitable for sparse graphs.
+        /// </summary>
+        /// <param name="R"></param>
+        /// <param name="P"></param>
+        /// <param name="X"></param>
+        /// <param name="result"></param>
+        void Degeneracy(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, List<ISet<TVertex>> result)
         {
             foreach (var vertex in DegeneracyOrder())
             {
@@ -227,7 +269,7 @@ namespace Cogito.QuickGraph.Algorithms
             }
         }
 
-        protected IEnumerable<TVertex> DegeneracyOrder()
+        IEnumerable<TVertex> DegeneracyOrder()
         {
             return VisitedGraph.Vertices.OrderBy(i => i, new DegeneracyOrderComparator(vertex => AdjacentVertices(vertex)));
         }
