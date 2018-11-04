@@ -182,25 +182,11 @@ namespace Cogito.QuickGraph.Algorithms
         /// <summary>
         /// Gets the set of vertices adjacent to the specified vertex.
         /// </summary>
-        /// <param name="v"></param>
+        /// <param name="vertex"></param>
         /// <returns></returns>
-        ISet<TVertex> AdjacentVertices(TVertex v)
-        {
-            return adjacentVerticesCache.GetOrAdd(v, k =>
-            {
-                var h = new HashSet<TVertex>();
-
-                foreach (var i in VisitedGraph.AdjacentEdges(k))
-                {
-                    if (!Equals(i.Source, k))
-                        h.Add(i.Source);
-                    else
-                        h.Add(i.Target);
-                }
-
-                return h;
-            });
-        }
+        ISet<TVertex> AdjacentVertices(TVertex vertex) =>
+            adjacentVerticesCache.GetOrAdd(vertex, v =>
+                new HashSet<TVertex>(VisitedGraph.AdjacentEdges(v).Select(i => i.GetOtherVertex(v))));
 
         /// <summary>
         /// Implements the standard Bron-Kerbosh algorithm.
@@ -211,12 +197,11 @@ namespace Cogito.QuickGraph.Algorithms
         /// <param name="result"></param>
         void Naive(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, List<ISet<TVertex>> result)
         {
-            if (P.Any() == false && X.Any() == false)
+            if (P.Count == 0 && X.Count == 0)
                 result.Add(new HashSet<TVertex>(R, EqualityComparer<TVertex>.Default));
 
-            while (P.Any())
+            while (P.FirstOrDefault() is TVertex vertex)
             {
-                var vertex = P.First();
                 var neighbourhood = AdjacentVertices(vertex);
                 Naive(Union(R, vertex), Intersection(P, neighbourhood), Intersection(X, neighbourhood), result);
                 P.Remove(vertex);
@@ -233,15 +218,13 @@ namespace Cogito.QuickGraph.Algorithms
         /// <param name="result"></param>
         void Pivot(ISet<TVertex> R, ISet<TVertex> P, ISet<TVertex> X, List<ISet<TVertex>> result)
         {
-            if (P.Any() == false && X.Any() == false)
+            if (P.Count == 0 && X.Count == 0)
             {
                 result.Add(new HashSet<TVertex>(R, EqualityComparer<TVertex>.Default));
             }
             else
             {
-                var pivot = P.Concat(X).First();
-                var candidates = Minus(P, AdjacentVertices(pivot));
-                foreach (var vertex in candidates)
+                foreach (var vertex in Minus(P, AdjacentVertices(P.Concat(X).First())))
                 {
                     var neighbourhood = AdjacentVertices(vertex);
                     Pivot(Union(R, vertex), Intersection(P, neighbourhood), Intersection(X, neighbourhood), result);
